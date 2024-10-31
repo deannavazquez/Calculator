@@ -25,3 +25,16 @@ function operate(a, b, operator) {
     const operation = operations[operator];
     return operation ? operation(a, b) : null;
 };
+
+const container = document.querySelector(".buttons");
+
+// Function to create buttons for calculator
+function createButtons() {
+    for (let i = 0; i < 4 * 4; i++) {
+        const button = document.createElement("div");
+          button.classList.add("button", `button-${i + 1}`);
+          container.appendChild(button); 
+      }
+}
+
+createButtons();
