@@ -17,7 +17,7 @@ let operator = '';
 let operations = {
     '+': add,
     '-': subtract,
-    '*': multiply,
+    'x': multiply,
     '/': divide,
 };
 
@@ -26,15 +26,36 @@ function operate(a, b, operator) {
     return operation ? operation(a, b) : null;
 };
 
-const container = document.querySelector(".buttons");
+
 
 // Function to create buttons for calculator
-function createButtons() {
-    for (let i = 0; i < 4 * 4; i++) {
+function createCalculatorButtons() {
+    const container = document.getElementById("container");
+    const buttons = [
+        "7", "8", "9", "/",
+        "4", "5", "6", "*",
+        "1", "2", "3", "-",
+        "C", "0", "=", "+"
+    ];
+
+    // Create each button based on the buttons array
+    buttons.forEach((text) => {
         const button = document.createElement("div");
-          button.classList.add("button", `button-${i + 1}`);
-          container.appendChild(button); 
-      }
+        button.classList.add("button");
+        button.textContent = text;
+        container.appendChild(button);
+    });
 }
 
-createButtons();
+createCalculatorButtons();
+
+// for (let i = 0; i < 4 * 4; i++) {
+//     const button = document.createElement("div");
+//       button.classList.add("button", `button-${i + 1}`);
+//       container.appendChild(button); 
+
+//       button.textContent = i + 1;
+
+//       // Append each button to the container
+//       container.appendChild(button); 
+//   }
