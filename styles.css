@@ -26,4 +26,9 @@
     height: 100px;
     width: 100px;    
     border: 1px solid black;
-  }
+    font-size: clamp(5rem, 10vw, 4rem);
+    padding: 0; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}

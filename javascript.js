@@ -49,13 +49,3 @@ function createCalculatorButtons() {
 
 createCalculatorButtons();
 
-// for (let i = 0; i < 4 * 4; i++) {
-//     const button = document.createElement("div");
-//       button.classList.add("button", `button-${i + 1}`);
-//       container.appendChild(button); 
-
-//       button.textContent = i + 1;
-
-//       // Append each button to the container
-//       container.appendChild(button); 
-//   }
