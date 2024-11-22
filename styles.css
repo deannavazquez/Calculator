@@ -1,15 +1,21 @@
 .calculator {
     margin: auto;
+    margin-top: 300px;
     background-color: #D3D3D3;
     width: 600px;
-    height: 800px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
 }
 
 .display {
-    margin: 10px;
-    margin-left: 60px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
     width: 470px;
-    height: 75px;
+    height: 70px;
+    background-color: white;
+    font-size: 3rem;
 }
 
 .container {
@@ -31,4 +37,5 @@
     align-items: center; 
     justify-content: center; 
     text-align: center; 
+    cursor:pointer;
 }
