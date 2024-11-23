@@ -3,6 +3,7 @@ const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
+// const percentage = (a) => a / 100;
 
 // Variables for calculator
 let numOne = "";
@@ -14,8 +15,9 @@ let displayValue = ""; // To hold the current display value
 const operations = {
   "+": add,
   "-": subtract,
-  x: multiply,
+  "*": multiply,
   "/": divide,
+  // "%": percentage,
 };
 
 // Function to perform operations
@@ -29,22 +31,25 @@ const display = document.querySelector(".display");
 
 // Button labels
 const buttons = [
+  "AC",
+  "+/-",
+  "%",
+  "/",
   "7",
   "8",
   "9",
-  "/",
+  "*",
   "4",
   "5",
   "6",
-  "x",
+  "-",
   "1",
   "2",
   "3",
-  "-",
-  "C",
-  "0",
-  "=",
   "+",
+  "0",
+  ".",
+  "=",
 ];
 
 // Function to create buttons for the calculator
@@ -97,13 +102,33 @@ function handleButtonClick(text) {
       numTwo = ""; // Clear numTwo
       operator = ""; // Clear operator
     }
-  } else if (text === "C") {
+  } else if (text === "AC") {
     // If text is clear
     displayValue = "";
     numOne = "";
     numTwo = "";
     operator = "";
     display.innerHTML = "0";
+  } else if (text === "%") {
+    if (numOne && !operator && !displayValue) {
+      // Apply % to the result of the last operation
+      numOne = Number(numOne) / 100;
+      display.innerHTML = numOne;
+    } else if (displayValue) {
+      // Apply % to the current display value
+      displayValue = Number(displayValue) / 100;
+      display.innerHTML = displayValue;
+    }
+  } else if (text === "+/-") {
+    if (numOne && !operator && !displayValue) {
+      // Apply % to the result of the last operation
+      numOne = Number(numOne) * -1;
+      display.innerHTML = numOne;
+    } else if (displayValue) {
+      // Apply % to the current display value
+      displayValue = Number(displayValue) * -1;
+      display.innerHTML = displayValue;
+    }
   }
 }
 
