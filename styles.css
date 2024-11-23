@@ -60,3 +60,15 @@ body {
 .container .button:nth-last-child(3) {
   flex-grow: 11; /* This will make the third button from the bottom grow larger */
 }
+
+.container .button:nth-of-type(-n + 4),
+.button-8,
+.button-12,
+.button-16,
+.button-19 {
+  background-color: rgb(97, 102, 236);
+}
+
+.button:active {
+  background-color: #2e7d32; /* Default pressed color */
+}

@@ -57,9 +57,9 @@ function createCalculatorButtons() {
   const container = document.getElementById("container");
 
   // Create each button
-  buttons.forEach((text) => {
+  buttons.forEach((text, index) => {
     const button = document.createElement("div");
-    button.classList.add("button");
+    button.classList.add("button", `button-${index + 1}`);
     button.textContent = text;
     container.appendChild(button);
 
