@@ -3,7 +3,6 @@ const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
-// const percentage = (a) => a / 100;
 
 // Variables for calculator
 let numOne = "";
@@ -17,11 +16,13 @@ const operations = {
   "-": subtract,
   "*": multiply,
   "/": divide,
-  // "%": percentage,
 };
 
 // Function to perform operations
 function operate(a, b, operator) {
+  if (operator === "/" && b === 0) {
+    return "womp womp";
+  }
   const operation = operations[operator];
   return operation ? operation(a, b) : null;
 }
@@ -128,6 +129,10 @@ function handleButtonClick(text) {
       // Apply % to the current display value
       displayValue = Number(displayValue) * -1;
       display.innerHTML = displayValue;
+    } else if (text === "/") {
+      if (numOne === "0") {
+        display.innerHTML = "wompwomp";
+      }
     }
   }
 }
